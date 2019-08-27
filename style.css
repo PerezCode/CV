@@ -841,6 +841,57 @@ main .profile{
     width: 100%;
 }
 
+.works-content img:hover{
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.modal figure{
+    margin: 0;
+    width: min-content;
+    height: min-content;
+    position: relative;
+}
+
+.modal span{
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    font-size: 24px;
+    color: #f39c12;
+}
+
+.modal .fa-window-close:before{
+    content: "\f410"
+}
+
+.modal span:hover{
+    cursor: pointer;
+}
+
+.modal img{
+    width: 400px;
+}
+
+.modal-on{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
 .blog-items article{
     padding: 16px;
 }
@@ -1035,5 +1086,3 @@ main .contact{
         margin-bottom: 0;
     }
 }
-
-
