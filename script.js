@@ -12,6 +12,14 @@ let imagenes = document.querySelectorAll(".works-content img");
 let modales = document.querySelectorAll(".modal");
 let botonCerrar = document.querySelectorAll(".close-button");
 
+let inputNombre = window.localStorage.getItem('name');
+let inputEmail = window.localStorage.getItem('email');
+let inputMessage = window.localStorage.getItem('message');
+
+console.log(`Nombre: ${inputNombre}`);
+console.log(`Correo: ${inputEmail}`);
+console.log(`Mensaje: ${inputMessage}`);
+
 function remove() {
     about.classList.remove('view');
     getAbout.classList.remove('selected');
@@ -68,8 +76,12 @@ getContact.addEventListener('click', function (e) {
     }
 });
 
-var email = document.getElementById("email");
-var form = document.getElementById("form");
+/* ------------------Formulario------------------ */
+let form = document.getElementById("form");
+let nombre = document.getElementById('name');
+let email = document.getElementById("email");
+let message = document.getElementById('message');
+let submitButton = document.getElementById('submit-btn');
 
 email.addEventListener("input", function (event) {
   if (email.validity.typeMismatch) {
@@ -79,9 +91,22 @@ email.addEventListener("input", function (event) {
   }
 });
 
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
-  });
+form.addEventListener('submit', function saveInLocalStorage(){
+    window.localStorage.setItem('name', nombre.value);
+    window.localStorage.setItem('email', email.value);
+    window.localStorage.setItem('message', message.value);
+    let inputNombre = window.localStorage.getItem('name');
+    let inputEmail = window.localStorage.getItem('email');
+    let inputMessage = window.localStorage.getItem('message');
+
+    console.log(`Nombre: ${inputNombre}`);
+    console.log(`Correo: ${inputEmail}`);
+    console.log(`Mensaje: ${inputMessage}`);
+    
+})
+
+
+/* ------------------Formulario------------------ */
 
 imagenes[0].addEventListener("click", function(){
     modales[0].classList.add("modal-on");
