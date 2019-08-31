@@ -7,14 +7,10 @@ let getWorks = document.getElementById("getWorks");
 let getBlog = document.getElementById("getBlog");
 let contact = document.getElementById("contact");
 let getContact = document.getElementById("getContact");
+let getContactDirect = document.getElementById('contactDirect');
 let imagenes = document.querySelectorAll(".works-content img");
 let modales = document.querySelectorAll(".modal");
 let botonCerrar = document.querySelectorAll(".close-button");
-
-console.log(imagenes);
-console.log(modales);
-console.log(botonCerrar);
-
 
 function remove() {
     about.classList.remove('view');
@@ -26,6 +22,15 @@ function remove() {
     contact.classList.remove('view');
     getContact.classList.remove('selected');
 };
+
+getContactDirect.addEventListener('click', function (e) {
+    if (window.innerWidth > 1040) {
+        e.preventDefault();
+        remove();
+        contact.classList.add('view');
+        getContact.classList.add('selected');
+    }
+});
 
 getAbout.addEventListener('click', function (e) {
     if (window.innerWidth > 1040) {
